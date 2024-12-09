@@ -31,6 +31,10 @@ app.use("/api/v1/admin", require("./routes/adminRoutes"));
 //static port
 app.use(express.static(path.join(__dirname, "./client/build")));
 
+app.get('/', (req, res)=>{
+   res.send("Hello world")
+})
+
 //static route
 app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
